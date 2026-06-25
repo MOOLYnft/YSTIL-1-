@@ -1,0 +1,440 @@
+*
+  box-sizing: border-box
+@font-face 
+  font-family: 'Abel'
+  src: url('src/fonts/abel_regular.woff2') format('woff2')
+  font-weight: 400
+  font-style: normal
+  font-display: swap
+
+$font-main: 'Abel', sans-serif  
+$color-bg: #f9f9f9
+$color-dark: #201e1e
+$color-orange: #ffb273
+$color-border: #f3dcd0
+$color-white: #ffffff
+
+body
+  font-family: $font-main
+.header 
+  background-color: $color-bg
+  padding: 15px 40px 25px 40px
+  max-height: 200px
+  &__top 
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 30px
+    margin-bottom: 25px
+  .search 
+    position: relative
+    flex-grow: 1
+    max-width: 70%
+    &__input 
+      width: 92%
+      padding: 12px 45px 12px 15px
+      border: 1px solid $color-border
+      border-radius: 2px
+      background-color: $color-white
+      font-size: 14px
+      outline: none
+      transition: border-color 0.2s
+      &:focus 
+        border-color: darken($color-border, 15%)
+    &__button 
+      position: absolute
+      right: 12px
+      top: 50%
+      transform: translateY(-50%)
+      background: none
+      border: none
+      cursor: pointer
+      color: $color-dark
+      padding: 0
+      display: flex
+      align-items: center
+      &:hover 
+        opacity: 0.7
+  .actions 
+    display: flex
+    align-items: center
+    gap: 35px
+    &__item 
+      color: $color-dark
+      text-decoration: none
+      transition: transform 0.2s
+      &:hover 
+        transform: scale(1.08)
+  .menu 
+    &__container 
+      display: flex
+      align-items: center
+      gap: 35px
+      justify-content: center
+    &__item 
+      position: relative
+      &--dropdown 
+        &.is-open 
+          .menu__arrow-icon 
+            transform: rotate(90deg)
+          .dropdown-list 
+            opacity: 1
+            visibility: visible
+            transform: translateY(0)
+    &__button 
+      display: inline-flex
+      align-items: center
+      gap: 25px
+      height: 42px
+      padding: 0 24px
+      border: none
+      border-radius: 6px
+      font-size: 15px
+      font-weight: 500
+      text-decoration: none
+      cursor: pointer
+      transition: background-color 0.2s, color 0.2s
+      &--catalog 
+        background-color: $color-dark
+        color: $color-white
+        &:hover 
+          background-color: lighten($color-dark, 10%)
+      &--accent 
+        background-color: $color-orange
+        color: $color-dark
+        &:hover 
+          background-color: lighten($color-orange, 10%)
+    &__arrow-icon 
+      transition: transform 0.2s
+
+    .dropdown-list 
+      position: absolute
+      top: calc(100% + 5px)
+      left: 0
+      min-width: 200px
+      background-color: $color-white
+      border: 1px solid rgba(0, 0, 0, 0.08)
+      list-style: none
+      padding: 8px 0
+      margin: 0
+      opacity: 0
+      transform: translateY(10px)
+      transition: all 0.2s ease
+      z-index: 100
+
+      &__link 
+        display: block
+        padding: 10px 20px
+        color: $color-dark
+        text-decoration: none
+        font-size: 14px
+        &:hover 
+          background-color: $color-bg
+
+.footer 
+  display: flex
+  justify-content: center
+  background-color: $color-bg
+  padding: 60px 20px
+  margin-top: 80px
+  &__container 
+    max-width: 1200px
+    margin: 0 auto
+    display: flex
+    gap: 40px
+  &__title 
+    font-size: 16px
+    margin-bottom: 20px
+  &__list 
+    list-style: none
+    li 
+      margin-bottom: 10px
+  &__link 
+    text-decoration: none
+    font-size: 14px
+    &:hover 
+      color: $color-dark
+.slider
+  display: flex
+  justify-content: center
+.cards 
+  .title
+    display: flex
+    justify-content: center
+  .container 
+    width: 100% 
+    padding: 0 20px 
+  .row 
+    display: flex 
+    flex-direction: row 
+    flex-wrap: wrap  
+    gap: 20px    
+    max-width: 1400px
+    margin: 0 auto
+    justify-content: center 
+  .more
+    display: flex
+    justify-content: center
+.feedback
+  padding: 60px 0
+  text-align: center
+
+  &__container
+    max-width: 600px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center  
+  &__title
+    font-size: 24px
+    font-weight: normal
+    margin: 0 0 15px 0
+    letter-spacing: 1px
+  &__subtitle
+    font-size: 16px
+    color: #000
+    margin: 0 0 25px 0
+  &__socials
+    display: flex
+    gap: 40px 
+    margin-bottom: 5px
+  &__marketplaces
+    display: flex
+    gap: 50px
+.cart-empty
+  padding: 80px 
+  text-align: center
+  &__container
+    max-width: 500px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+
+$color-dark: #000000
+$color-orange: #ffb380
+$color-orange-hover: #ff9e59
+$color-border: #cccccc
+
+.contacts
+  padding: 60px 0
+
+  &__container
+    max-width: 1100px
+    margin: 0 auto
+    padding: 0 20px
+
+  &__title
+    font-size: 32px
+    font-weight: normal
+    margin: 0 0 50px 0
+    text-transform: uppercase
+    letter-spacing: 1px
+
+  &__content
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    gap: 80px
+
+
+  &__info
+    flex: 1
+    display: flex
+    flex-direction: column
+    gap: 35px
+
+  &__block
+    display: flex
+    flex-direction: column
+    gap: 12px
+
+  &__label
+    font-size: 14px
+    font-weight: 600
+    text-transform: uppercase
+    letter-spacing: 0.5px
+    color: $color-dark
+    margin: 0
+
+  &__link
+    font-size: 16px
+    color: $color-dark
+
+  &__socials
+    display: flex
+    gap: 30px
+
+  &__social-item
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 38px
+    max-height: 38px
+
+  .contact-form
+    flex: 1.2
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+    &__field
+      width: 100%
+
+    &__input, &__textarea
+      width: 100%
+      padding: 12px 15px
+      border: 1px solid $color-border
+      border-radius: 2px
+      font-size: 14px
+      outline: none
+      background-color: transparent
+  
+      box-sizing: border-box
+    &__btn
+      align-self: flex-start 
+      background-color: $color-orange
+      color: $color-dark
+      border: none
+      padding: 12px 40px
+      font-size: 14px
+      cursor: pointer
+      border-radius: 4px
+      transition: background-color 0.2s ease
+      
+      &:hover
+        background-color: $color-orange-hover
+// ==================== АДАПТИВ ====================
+@media (max-width: 768px)
+  .header
+    padding: 12px 15px 15px 15px
+    &__top
+      gap: 10px
+      margin-bottom: 15px
+    .logo
+      &__img
+        max-width: 110px
+    .search
+      &__input
+        padding: 10px 40px 10px 12px
+        font-size: 11px
+    .actions
+      gap: 15px
+      &__item
+        img
+          max-width: 22px
+    .menu
+      &__container
+        gap: 8px
+      &__button
+        gap: 8px
+        padding: 0 12px
+        height: 36px
+        font-size: 12px
+  .slider
+    img
+      max-height: 350px
+      object-fit: cover
+  .cards
+    .title
+      font-size: 24px
+    .row
+      gap: 12px
+      .col
+        flex: 0 0 calc(50% - 12px)
+        max-width: calc(50% - 12px)
+    .card-body
+      padding: 10px
+    .card-title
+      font-size: 14px
+    .card-text
+      font-size: 13px
+  .feedback
+    padding: 40px 0
+    &__title
+      font-size: 20px
+    &__subtitle
+      font-size: 14px
+    &__socials
+      gap: 25px
+    &__marketplaces
+      gap: 30px
+  .footer
+    padding: 35px 15px
+    margin-top: 50px
+    &__container
+      gap: 25px
+    &__column
+      flex: 1 1 100%
+      text-align: center
+    &__list
+      display: inline-block
+      text-align: left
+    &__socials
+      justify-content: center
+    &__form
+      max-width: 400px
+      margin: 0 auto
+  .contacts
+    &__title
+      font-size: 22px
+    &__info
+      gap: 25px
+    &__socials
+      justify-content: center
+    .contact-form
+      &__btn
+        align-self: center
+        width: 100%
+@media (max-width: 425px)
+  .header
+    .logo
+      &__img
+        max-width: 90px
+    .menu
+      &__container
+        gap: 5px
+      &__button
+        padding: 0 8px
+        height: 32px
+        font-size: 10px
+        gap: 5px
+  .cards
+    .title
+      font-size: 14px
+    .card-title
+      font-size: 11px
+    .card-text
+      font-size: 10px
+
+  .feedback
+    &__title
+      font-size: 13px
+    &__socials
+      gap: 13px
+      img
+        max-width: 25px
+    &__marketplaces
+      gap: 12px
+      img
+        max-width: 55px
+  .footer
+    &__title
+      font-size: 12px
+    &__link
+      font-size: 10px
+
+  
+    
+  
+
+      
+    
+  
+
+
+        
+      
+    
+  
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>help</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://jsdelivr.net" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__top">
+            <a href="/" class="header__logo logo">
+                <img src="icons/logo.svg" alt="YSTIL" class="logo__img">
+            </a>
+            <form action="/search" method="GET" class="header__search search">
+                <input type="text" name="q" class="search__input" placeholder="Поиск товаров...">
+                <button type="submit" class="search__button" aria-label="Найти">
+                    <img src="icons/search.svg" alt="" class="search__img">
+                </button>
+            </form>
+            <div class="header__actions actions">
+                <a href="/favorites" class="actions__item actions__item--wishlist" aria-label="Избранное">
+                    <img src="icons/like.svg" alt="" class="favorite__img">
+                </a>
+                <a href="profile.html" class="actions__item actions__item--profile" aria-label="Личный кабинет">
+                    <img src="icons/profile.svg" alt="" class="profile__img">
+                </a>
+                <a href="cart.html" class="actions__item actions__item--cart" aria-label="Корзина">
+                    <img src="icons/cart.svg" alt="" class="cart__img">
+                </a>
+            </div>
+        </div>
+        <nav class="header__nav menu">
+            <div class="menu__container">
+                <div class="menu__item menu__item--dropdown js-dropdown-toggle">
+                    <button class="menu__button menu__button--catalog">
+                        <span>Категория</span>
+                        <img src="icons/arrow-2.svg" alt="" class="menu__arrow-icon">
+                    </button>
+                    <ul class="menu__dropdown dropdown-list">
+                        <li class="dropdown-list__item"><a href="/catalog/sundresses" class="dropdown-list__link">Сарафаны</a></li>
+                        <li class="dropdown-list__item"><a href="/catalog/dresses" class="dropdown-list__link">Платья</a></li>
+                        <li class="dropdown-list__item"><a href="/catalog/skirts" class="dropdown-list__link">Юбки</a></li>
+                        <li class="dropdown-list__item"><a href="/catalog/tops" class="dropdown-list__link">Топы</a></li>
+                        <li class="dropdown-list__item"><a href="/catalog/vests" class="dropdown-list__link">Жилеты</a></li>
+                    </ul>
+                </div>
+                <div class="menu__item">
+                    <a href="/news" class="menu__button menu__button--accent">Новинки</a>
+                </div>
+                <div class="menu__item">
+                    <a href="/accessories" class="menu__button menu__button--accent">Аксессуары</a>
+                </div>
+                <div class="menu__item">
+                    <a href="help.html" class="menu__button menu__button--accent">Помощь</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+<section class="contacts">
+  <div class="contacts__container">
+    <h1 class="contacts__title">Контакты</h1>
+    <div class="contacts__content">
+      <div class="contacts__info">
+        <div class="contacts__block">
+          <h3 class="contacts__label">Электронная почта</h3>
+          <a href="mailto:ystil@gmail.com" class="contacts__link contacts__link--email">ystil@gmail.com</a>
+        </div>
+        <div class="contacts__block">
+          <h3 class="contacts__label">Напишите нам</h3>
+          <div class="contacts__socials">
+            <a href="#" class="contacts__social-item contacts__social-item--tg"><img src="icons/social-icons.svg" alt="..."></a>
+            <a href="#" class="contacts__social-item contacts__social-item--wa"><img src="icons/social-icons-1.svg" alt="..."></a>
+            <a href="#" class="contacts__social-item contacts__social-item--vk"><img src="icons/social-icons-2.svg" alt="..."></a>
+          </div>
+        </div>
+      </div>
+      <form class="contacts__form contact-form" >
+        <div class="contact-form__field">
+          <input type="text" class="contact-form__input" placeholder="Ваше имя" required>
+        </div>
+        <div class="contact-form__field">
+          <input type="email" class="contact-form__input" placeholder="Ваша электронная почта" required>
+        </div>
+        <div class="contact-form__field">
+          <textarea class="contact-form__textarea" placeholder="Сообщение" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="contact-form__btn">Отправить</button>
+      </form>
+    </div>
+  </div>
+</section>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__column">
+                <h3 class="footer__title">Информация</h3>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">Контакты</a></li>
+                    <li><a href="#" class="footer__link">Доставка</a></li>
+                    <li><a href="#" class="footer__link">Оплата</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3 class="footer__title">Контакты</h3>
+                <ul class="footer__list">
+                    <li><a href="mailto:ystil@gmail.com" class="footer__link">ystil@gmail.com</a></li>
+                    <li><a href="#" class="footer__link">Мессенджеры</a></li>
+                </ul>
+                <div class="footer__socials social-links social-links--small">
+                    <a href="#" class="social-links__item social-links__item--tg" aria-label="Telegram"></a>
+                    <a href="#" class="social-links__item social-links__item--wa" aria-label="WhatsApp"></a>
+                    <a href="#" class="social-links__item social-links__item--vk" aria-label="ВКонтакте"></a>
+                </div>
+            </div>
+            <div class="footer__column footer__column--subscribe">
+                <h3 class="footer__title">Подписка на новости</h3>
+                <p class="footer__text">Будьте в курсе всех новостей!</p>
+                <form class="footer__form subscribe-form">
+                    <label for="subscribe-email" class="visually-hidden">Электронная почта</label>
+                    <input type="email" id="subscribe-email" class="subscribe-form__input" placeholder="Ваша электронная почта" required>
+                    <button type="submit" class="subscribe-form__submit" aria-label="Подписаться">
+                        <img src="img/arrow.svg" alt="">
+                    </button>
+                </form>
+            </div>
+            <div class="footer__column footer__column--brand">
+                <div class="footer__logo">
+                    <img src="icons/logo.svg" alt="YSTIL" class="logo__img">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>
